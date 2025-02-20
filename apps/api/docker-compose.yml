@@ -1,0 +1,17 @@
+services:
+    db:
+        image: postgres
+        restart: always
+        environment:
+            - POSTGRES_USER=${POSTGRES_USER}
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            - POSTGRES_DB=eduventure
+        container_name: eduventure 
+        ports:
+            - '5432:5432'
+
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
